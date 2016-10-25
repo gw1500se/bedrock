@@ -16,7 +16,7 @@
   {% endblock %}
 
   {% if form %}
-    <form method="post" action="{{ secure_url() }}" id="newsletter-recovery-form" class="container billboard">
+    <form method="post" action="{{ request.build_absolute_uri(request.path) }}" id="newsletter-recovery-form" class="container billboard">
       <p class="intro">{{ _('Enter your email address and we’ll send you a link to your email preference center.') }}</p>
 
       {% if form.non_field_errors() %}
